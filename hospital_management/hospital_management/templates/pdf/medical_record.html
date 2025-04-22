@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Medical Record</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .header {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #0073e6;
+      }
+      .section {
+        margin-top: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .label {
+        font-weight: bold;
+        color: #555;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Medical Record</div>
+
+    <div class="section">
+      <p class="label">Doctor:</p>
+      <p>{{ doctor_name }}</p>
+      <p class="label">Patient Email:</p>
+      <p>{{ patient_email }}</p>
+      <p class="label">Visit Date:</p>
+      <p>{{ visit_date }}</p>
+    </div>
+
+    <div class="section">
+      <p class="label">Diagnosis:</p>
+      <p>{{ diagnosis }}</p>
+    </div>
+
+    {% if prescriptions %}
+    <div class="section">
+      <p class="label">Prescriptions:</p>
+      <p>{{ prescriptions }}</p>
+    </div>
+    {% endif %} {% if test_results %}
+    <div class="section">
+      <p class="label">Test Results:</p>
+      <p>{{ test_results }}</p>
+    </div>
+    {% endif %} {% if additional_notes %}
+    <div class="section">
+      <p class="label">Additional Notes:</p>
+      <p>{{ additional_notes }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+      This document is confidential. Please keep it safe.
+    </div>
+  </body>
+</html>

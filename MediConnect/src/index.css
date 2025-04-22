@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.mySwiper {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4a8bbe !important; /* Changes the navigation arrow colors */
+}
+
+.swiper-pagination-bullet {
+  background-color: #4a8bbe !important; /* Changes the pagination dots color */
+}
+
+.pagination-margin {
+  margin-top: 100px;
+}
