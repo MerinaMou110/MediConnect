@@ -32,12 +32,13 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "mediconnect-production-1675.up.railway.app"]
+
 CSRF_TRUSTED_ORIGINS = [
-    'https://mediconnect-production-1675.up.railway.app',
-    'http://127.0.0.1:8000',  # or whatever your local port is
-    'http://localhost:8000',
+    "https://mediconnect-production-1675.up.railway.app",
 ]
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 
