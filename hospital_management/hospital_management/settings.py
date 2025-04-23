@@ -223,13 +223,13 @@ EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
 
-from decouple import config, Csv
+
+
+from decouple import config
 import ssl
 
-# Redis for Celery (loaded from .env)
 REDIS_URL = config("REDIS_URL")
 
-# Celery settings
 CELERY_BROKER_URL = REDIS_URL
 CELERY_RESULT_BACKEND = REDIS_URL
 
@@ -238,6 +238,7 @@ CELERY_RESULT_BACKEND_USE_SSL = {"ssl_cert_reqs": ssl.CERT_NONE}
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
 
 
 
