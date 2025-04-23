@@ -36,12 +36,12 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "mediconnect-production-1675.up.railway.app",
+    # "mediconnect-production-1675.up.railway.app",
     "mediconnect-backend-7mjm.onrender.com",  # 👈 Add Render here
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://mediconnect-production-1675.up.railway.app",
+    # "https://mediconnect-production-1675.up.railway.app",
     "https://mediconnect-backend-7mjm.onrender.com",  # 👈 Add Render here
 ]
 

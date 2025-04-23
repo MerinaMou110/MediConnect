@@ -54,7 +54,8 @@ class UserRegistrationSerializer(serializers.Serializer):
         # Generate activation token
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.id))
-        activation_link = f"http://localhost:5173/activate/{uid}/{token}"  # ✅ Correct
+        # activation_link = f"http://localhost:5173/activate/{uid}/{token}"  # ✅ Correct
+        activation_link = f"https://mediconnect-backend-7mjm.onrender.com/activate/{uid}/{token}"  # ✅ Correct
 
 
 
@@ -173,7 +174,8 @@ class SendPasswordResetEmailSerializer(serializers.Serializer):
             user = User.objects.get(email=email)
             uid = urlsafe_base64_encode(force_bytes(user.id))
             token = PasswordResetTokenGenerator().make_token(user)
-            link = f"http://127.0.0.1:5501/reset_pass.html?uid={uid}&token={token}"
+            # link = f"http://127.0.0.1:5501/reset_pass.html?uid={uid}&token={token}"
+            link = f"https://mediconnect-backend-7mjm.onrender.com/reset_pass.html?uid={uid}&token={token}"
 
             # Send email
             body = f"Click the following link to reset your password: {link}"
