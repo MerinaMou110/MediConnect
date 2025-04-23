@@ -223,24 +223,22 @@ EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
 
-# celery
+from decouple import config, Csv
 import ssl
 
-# celery
-CELERY_BROKER_URL = env("REDIS_URL")
-CELERY_RESULT_BACKEND = env("REDIS_URL")
+# Redis for Celery (loaded from .env)
+REDIS_URL = config("REDIS_URL")
+
+# Celery settings
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
+
+CELERY_BROKER_USE_SSL = {"ssl_cert_reqs": ssl.CERT_NONE}
+CELERY_RESULT_BACKEND_USE_SSL = {"ssl_cert_reqs": ssl.CERT_NONE}
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
-# SSL config for rediss (secure Redis connections like Upstash)
-CELERY_BROKER_USE_SSL = {
-    'ssl_cert_reqs': ssl.CERT_NONE
-}
-
-CELERY_REDIS_BACKEND_USE_SSL = {
-    'ssl_cert_reqs': ssl.CERT_NONE
-}
 
 
 
