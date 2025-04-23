@@ -55,7 +55,7 @@ class UserRegistrationSerializer(serializers.Serializer):
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.id))
         # activation_link = f"http://localhost:5173/activate/{uid}/{token}"  # ✅ Correct
-        activation_link = f"https://mediconnect-backend-7mjm.onrender.com/activate/{uid}/{token}"  # ✅ Correct
+        activation_link = f"https://mediconnect-frontend.netlify.app/activate/{uid}/{token}"  # ✅ Correct
 
 
 
