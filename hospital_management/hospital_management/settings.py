@@ -203,7 +203,7 @@ SIMPLE_JWT = {
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://mediconnect-frontend.netlify.app/',
+    'https://mediconnect-frontend.netlify.app',
     #  'https://sandbox.sslcommerz.com',           # SSLCommerz sandbox
     # 'https://securepay.sslcommerz.com',         # SSLCommerz live
 ]
